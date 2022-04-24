@@ -4,7 +4,9 @@ const mongoose=require('mongoose')
 const dotenv=require('dotenv')
 require('dotenv/config')
 const bodyParser=require('body-parser')
+const cors=require('cors');
 
+app.use(cors());
 
 //everytime we hit some request we gotta make sure that we hit this boyd parser.
 app.use(bodyParser.json())

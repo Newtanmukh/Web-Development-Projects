@@ -43,6 +43,23 @@ catch(err){
 
 
 
+//UPDATE POST
+router.patch('/:postId',async(req,res)=>{
+
+try{
+const updatedpost = await Post.updateOne({_id:req.params.postId},
+    {$set:{title:req.body.title}})//second paramater is which stuff to update
+
+    res.json(updatedpost);
+}catch(err){
+    res.json({message:err})
+}
+
+})
+
+
+
+
 
 //SUBMIT A POST.
 router.post('/',async(req,res)=>{
