@@ -3,7 +3,11 @@ const app=express();
 const mongoose=require('mongoose')
 const dotenv=require('dotenv')
 require('dotenv/config')
+const bodyParser=require('body-parser')
 
+
+//everytime we hit some request we gotta make sure that we hit this boyd parser.
+app.use(bodyParser.json())
 
 //middleware: fucntion that execs when a routes are being hit. when a paticular route is being hit.
 
